@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseController : MonoBehaviour
@@ -17,7 +18,7 @@ public class PauseController : MonoBehaviour
 
     public void OnRestart()
     {
-
+        SceneManager.LoadScene(1);
     }
     public void OnResume()
     {
