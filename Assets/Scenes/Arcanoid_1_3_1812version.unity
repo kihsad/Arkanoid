@@ -727,6 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373521815}
   - component: {fileID: 373521817}
+  - component: {fileID: 373521818}
   - component: {fileID: 373521816}
   m_Layer: 5
   m_Name: PauseMenuPanel
@@ -795,6 +796,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373521814}
   m_CullTransparentMesh: 0
+--- !u!114 &373521818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373521814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65006e51ba1335f41863c4fc1369424d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _restartButton: {fileID: 1044550610}
+  _resumeButton: {fileID: 1218438356}
+  _exitButton: {fileID: 1230445883}
 --- !u!1 &380977038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,6 +1651,7 @@ MonoBehaviour:
       m_Action: Pause Input
       m_Flags: 0
     m_Flags: 0
+  _menuPausePanel: {fileID: 0}
 --- !u!114 &958932182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1743,7 +1760,7 @@ GameObject:
   - component: {fileID: 1044550611}
   - component: {fileID: 1044550610}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1811,7 +1828,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1044550611}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 373521818}
+        m_MethodName: OnRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1044550611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2154,7 +2182,7 @@ GameObject:
   - component: {fileID: 1218438357}
   - component: {fileID: 1218438356}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2222,7 +2250,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1218438357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 373521818}
+        m_MethodName: OnResume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1218438357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2379,7 +2418,7 @@ GameObject:
   - component: {fileID: 1230445884}
   - component: {fileID: 1230445883}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2447,7 +2486,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1230445884}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 373521818}
+        m_MethodName: OnExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1230445884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3452,6 +3502,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  _menuPausePanel: {fileID: 0}
 --- !u!54 &1805453518
 Rigidbody:
   m_ObjectHideFlags: 0

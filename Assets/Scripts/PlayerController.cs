@@ -14,7 +14,9 @@ namespace Arkanoid
         [SerializeField] private InputAction _pauseInputAction;
         
         private BallManager _ballManager;
-      
+
+        [SerializeField] private PauseController _menuPausePanel;
+
         private void Awake()
         {
             
@@ -27,9 +29,9 @@ namespace Arkanoid
             OnMovement();
         }
 
-        private void OnPause()
+        private void OnPause(CallbackContext context)
         {
-            
+            _menuPausePanel.gameObject.SetActive(true);
         }
 
         private void OnMovement()
@@ -46,6 +48,8 @@ namespace Arkanoid
 
         private void OnEnable()
         {
+            _pauseInputAction.Enable();
+            _pauseInputAction.performed += OnPause;
             _moveInputAction.Enable();
             _launchInputAction.Enable();
             _launchInputAction.performed += Launch;
@@ -53,6 +57,8 @@ namespace Arkanoid
 
         private void OnDisable()
         {
+            _pauseInputAction.performed -= OnPause;
+            _pauseInputAction.Disable();
             _moveInputAction.Disable();
             _launchInputAction.Disable();
             _launchInputAction.performed -= Launch;
