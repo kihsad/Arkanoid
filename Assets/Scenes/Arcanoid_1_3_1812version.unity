@@ -735,7 +735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &373521815
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1651,7 +1651,7 @@ MonoBehaviour:
       m_Action: Pause Input
       m_Flags: 0
     m_Flags: 0
-  _menuPausePanel: {fileID: 0}
+  _menuPausePanel: {fileID: 373521818}
 --- !u!114 &958932182
 MonoBehaviour:
   m_ObjectHideFlags: 0

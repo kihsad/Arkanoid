@@ -1,4 +1,5 @@
 ﻿
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
@@ -32,6 +33,8 @@ namespace Arkanoid
         private void OnPause(CallbackContext context)
         {
             _menuPausePanel.gameObject.SetActive(true);
+            Time.timeScale = 0;
+            //EditorApplication.isPaused = true;
         }
 
         private void OnMovement()

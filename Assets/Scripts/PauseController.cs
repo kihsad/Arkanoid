@@ -19,14 +19,17 @@ public class PauseController : MonoBehaviour
     public void OnRestart()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
     public void OnResume()
     {
         gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
     public void OnExit()
     {
         EditorApplication.isPlaying = false;
+        Time.timeScale = 1;
     }
 
 }
