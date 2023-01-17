@@ -11,6 +11,8 @@ namespace Arkanoid
         [SerializeField] private InputAction _moveInputAction;
         [SerializeField] private InputAction _launchInputAction;
         [SerializeField, Range(0, 10)] private float _movementSpeed;
+        [SerializeField] private InputAction _pauseInputAction;
+        
         private BallManager _ballManager;
       
         private void Awake()
@@ -25,6 +27,10 @@ namespace Arkanoid
             OnMovement();
         }
 
+        private void OnPause()
+        {
+            
+        }
 
         private void OnMovement()
         {
